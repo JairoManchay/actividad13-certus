@@ -1,0 +1,22 @@
+
+  <section class="shadow mt-3 d-flex justify-content-center align-items-center">
+    <p class="text-muted me-4">Resultado: </p>
+    <section >
+      <article *ngIf="model.monedas!=0; else error">
+        <article *ngIf="model.monedas==1" class="alert alert-danger">
+          {{model.numero | currency:'EUR'}}
+        </article>
+        <article *ngIf="model.monedas==2" class="alert alert-danger">
+          {{model.numero | currency:'$'}}
+        </article>
+        <article *ngIf="model.monedas==3" class="alert alert-danger">
+          {{model.numero | currency:'PEN'}}
+        </article>
+      </article>
+
+      <ng-template #error>
+        <p class="alert alert-danger">Escoge una opcion</p>
+      </ng-template>
+
+    </section>
+</section>

@@ -1,0 +1,32 @@
+<h1 class="text-center">Cambio monedas</h1>
+
+<section class="container-sm">
+  <form action="" #formulario="ngForm">
+    <section class="form-group">
+      <label for="NumMo">Escribe el número: </label>
+      <input
+        type="number"
+        class="form-control"
+        name="NumMo"
+        [(ngModel)]="model.numero"
+        required
+        >
+    </section>
+
+    <section>
+      <label for="mon">Seleescion una moneda</label>
+      <select
+        class="form-control"
+        name="mon"
+        [(ngModel)]="model.monedas">
+        <option *ngFor="let item of monedasArrya" value="{{item.value}}">{{item.texto}}</option>
+
+      </select>
+    </section>
+  </form>
+
+  <!-- Mostrando los resultados -->
+    <app-muestra-datos [model]="model"></app-muestra-datos>
+
+
+</section>
